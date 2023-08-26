@@ -1,0 +1,36 @@
+<mat-card *ngFor="let equipo of equipos" class="equipo-card mat-elevation-z10">
+
+  <mat-card-header>
+
+    <mat-card-title>{{equipo.codigo}}</mat-card-title>
+
+  </mat-card-header>
+
+  <img mat-card-image [src]="equipo.iconUrl">
+
+  <mat-card-content>
+    <p>{{equipo.sO}}</p>
+  </mat-card-content>
+  <mat-card-actions class="equipo-actions">
+
+    <button mat-button class="mat-raised-button mat-primary" [routerLink]="['/equipos', equipo.estado]">
+      VIEW COURSE
+    </button>
+
+    <ng-container>
+      <ng-container>
+        <button mat-button class="mat-raised-button mat-accent"
+                (click)="editEquipo(equipo)">
+          EDIT
+        </button>
+        <button mat-mini-fab color="warn">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </ng-container>
+    </ng-container>
+
+  </mat-card-actions>
+
+
+
+</mat-card>

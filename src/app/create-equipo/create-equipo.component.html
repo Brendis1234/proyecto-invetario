@@ -1,0 +1,63 @@
+<div class="create-equipo">
+
+  <h3>Registrar nuevo equipo</h3>
+
+  <form [formGroup]="form">
+
+    <mat-form-field appearance="outline">
+
+      <input placeholder="Tipo de Dispositivo" matInput formControlName="tipoDispositivo">
+
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+
+      <input placeholder="Modelo" matInput formControlName="modelo" >
+
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+
+      <input placeholder="Sistema operativo" matInput formControlName="sO">
+
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+
+      <input placeholder="Estado" matInput formControlName="estado">
+
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+
+      <input placeholder="Tipo conexión a red" matInput formControlName="tipoConRed">
+
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline">
+
+      <textarea matInput placeholder="Descripcion"
+                formControlName="descripcion"></textarea>
+
+    </mat-form-field>
+    <mat-form-field appearance="outline" >
+
+      <mat-select placeholder="Seleccione portal TIC" formControlName="categoria">
+        <mat-option value="Universidad">Universidad</mat-option>
+        <mat-option value="Colegio">Colegio</mat-option>
+        <mat-option value="CasaC">Casa de la cultura</mat-option>
+      </mat-select>
+
+    </mat-form-field>
+
+
+    <button mat-raised-button color="warn" [disabled]="!form.valid"
+    (click)="onCreateEquipo()">
+      Registrar Equipo
+    </button>
+
+  </form>
+
+</div>
+
+

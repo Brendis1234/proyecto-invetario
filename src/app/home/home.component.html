@@ -1,0 +1,33 @@
+<div class="equipo-panel">
+
+    <div class="header">
+
+        <h2 class="title">Todos los equipos</h2>
+
+        <button mat-mini-fab color="accent" routerLink="/create-equipo">
+            <mat-icon class="add-course-btn">add</mat-icon>
+        </button>
+
+    </div>
+
+    <mat-tab-group>
+
+        <mat-tab label="Universidad">
+            <equipos-card-list [equipos]="universidadEquipos$ | async"></equipos-card-list>
+
+        </mat-tab>
+
+        <mat-tab label="Colegio">
+            <equipos-card-list [equipos]="colegioEquipos$ | async"></equipos-card-list>
+
+        </mat-tab>
+
+        <mat-tab label="Casa de la cultura">
+            <equipos-card-list [equipos]="casaCEquipos$ | async"></equipos-card-list>
+
+        </mat-tab>
+
+    </mat-tab-group>
+
+</div>
+
