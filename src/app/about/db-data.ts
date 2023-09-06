@@ -1,6 +1,4 @@
 export const EQUIPOS: any = {
-
-
   1: {
     id:1,
     sO:'Windows 10',
@@ -10,9 +8,9 @@ export const EQUIPOS: any = {
     tipoDispositivo:'computador de escritorio',
     descripcion:'dispositivo en perfecto estado',
     estado:'nuevo',
-    iconUrl: 'https://angular-university.s3-us-west-1.amazonaws.com/course-images/angular-forms-course-small.jpg',
-    courseListIcon: 'https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png',
-    categoria: ['universidad']
+    categoria: ['Universidad'],
+    serie:'u1',
+    sala:2
   },
 
 
@@ -25,9 +23,9 @@ export const EQUIPOS: any = {
     tipoDispositivo:'impresora',
     descripcion:'dispositivo en perfecto estado',
     estado:'nuevo',
-    categoria: ['universidad'],
-    iconUrl: 'https://angular-university.s3-us-west-1.amazonaws.com/course-images/angular-router-course.jpg',
-    courseListIcon: 'https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png',
+    categoria: ['Universidad'],
+    serie:'u2',
+    sala:1
   },
 
 
@@ -41,9 +39,9 @@ export const EQUIPOS: any = {
     tipoDispositivo:'computador de escritorio',
     descripcion:'dispositivo en perfecto estado',
     estado:'nuevo',
-    iconUrl: 'https://angular-university.s3-us-west-1.amazonaws.com/course-images/angular-forms-course-small.jpg',
-    courseListIcon: 'https://angular-academy.s3.amazonaws.com/main-logo/main-page-logo-small-hat.png',
-    categoria: ['Colegio']
+    categoria: ['Colegio'],
+    serie:'c1',
+    sala:2
   },
 
   4: {
@@ -55,12 +53,10 @@ export const EQUIPOS: any = {
     tipoDispositivo:'impresora',
     descripcion:'dispositivo en perfecto estado',
     estado:'nuevo',
-    iconUrl: 'https://angular-academy.s3.amazonaws.com/thumbnails/advanced_angular-small-v3.png',
-    courseListIcon: 'https://angular-academy.s3.amazonaws.com/thumbnails/angular-advanced-lesson-icon.png',
-    categoria: ['Colegio']
-  },
-
- 
+    categoria: ['Colegio'],
+    serie:'c2',
+    sala:2
+  }
 
 };
 

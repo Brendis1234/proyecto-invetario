@@ -23,13 +23,13 @@ export class AboutComponent {
         for (let equipo of Object.values(EQUIPOS)) {
             const newEquipo = this.removeId(equipo);
             const equipoRef = await equiposCollection.add(newEquipo);
-            const lessons = await equipoRef.collection('mantenimiento');
+            const mant = await equipoRef.collection('mantenimiento');
             const equipoMantenimiento = findLessonsForCourse(equipo['id']);
             console.log(`Uploading equipo ${equipo['descripcion']}`);
-            for (const mantenimiento of equipoMantenimiento) {
-                const newMantenimiento = this.removeId(mantenimiento);
+            for (const mantenimientos of equipoMantenimiento) {
+                const newMantenimiento = this.removeId(mantenimientos);
                 delete newMantenimiento.courseId;
-                await lessons.add(newMantenimiento);
+                await mant.add(newMantenimiento);
             }
         }
     }

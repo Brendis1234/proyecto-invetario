@@ -3,13 +3,13 @@ import {ActivatedRoute} from '@angular/router';
 import {Equipo} from '../model/equipo';
 import {finalize, tap} from 'rxjs/operators';
 import {Observable} from 'rxjs';
-import {Lesson} from '../model/lesson';
+import {Mantenimiento} from '../model/mantenimiento';
 
 
 @Component({
-  selector: 'course',
-  templateUrl: './course.component.html',
-  styleUrls: ['./course.component.css']
+  selector: 'equipo',
+  templateUrl: './equipo.component.html',
+  styleUrls: ['./equipo.component.css']
 })
 export class CourseComponent implements OnInit {
 

@@ -2,18 +2,23 @@
 
   <mat-card-header>
 
-    <mat-card-title>{{equipo.codigo}}</mat-card-title>
+    <mat-card-title>Serie: {{equipo.serie}}</mat-card-title>
 
   </mat-card-header>
 
   <img mat-card-image [src]="equipo.iconUrl">
 
   <mat-card-content>
-    <p>{{equipo.sO}}</p>
+    <p>Modelo: {{equipo.modelo}}</p>
+    <p>Tipo de dispositivo: {{equipo.tipoDispositivo}}</p>
+    <p>Sistema operativo: {{equipo.sO}}</p>
+    <p>Tipo conexión a red: {{equipo.tipoConRed}}</p>
+    <p>Estado: {{equipo.estado}}</p>
+    <p>descripcion: {{equipo.descripcion}}</p>
   </mat-card-content>
   <mat-card-actions class="equipo-actions">
 
-    <button mat-button class="mat-raised-button mat-primary" [routerLink]="['/equipos', equipo.estado]">
+    <button mat-button class="mat-raised-button mat-primary" [routerLink]="['/equipos', equipo.url]">
       VIEW COURSE
     </button>
 
@@ -21,9 +26,9 @@
       <ng-container>
         <button mat-button class="mat-raised-button mat-accent"
                 (click)="editEquipo(equipo)">
-          EDIT
+          EDITAR
         </button>
-        <button mat-mini-fab color="warn">
+        <button mat-mini-fab color="warn" (click)="onDeleteEquipo(equipo)">
           <mat-icon>delete</mat-icon>
         </button>
       </ng-container>

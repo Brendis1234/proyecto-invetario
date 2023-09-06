@@ -23,7 +23,8 @@ export class CreateEquipoComponent implements OnInit {
     estado:['',Validators.required],
     tipoConRed:['',Validators.required],
     modelo:['',Validators.required],
-    categoria:['',Validators.required]
+    categoria:['',Validators.required],
+    serie:['',Validators.required]
   });
   constructor(private fb:FormBuilder,
     private equipoService:EquiposService,
@@ -47,7 +48,8 @@ export class CreateEquipoComponent implements OnInit {
             sO:val.sO,
             tipoDispositivo: val.tipoDispositivo,
             tipoConRed: val.tipoConRed,
-            categoria: [val.categoria]
+            categoria: [val.categoria],
+            serie:val.serie
         };
 
         this.equipoService.createEquipo(newEquipo, this.equipoId)

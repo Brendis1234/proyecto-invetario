@@ -2,7 +2,7 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
-import {CourseComponent} from './course/course.component';
+import {CourseComponent} from './equipo/equipo.component';
 import {LoginComponent} from './login/login.component';
 import {CreateEquipoComponent} from './create-equipo/create-equipo.component';
 import {AngularFireAuthGuard, hasCustomClaim, redirectUnauthorizedTo} from '@angular/fire/auth-guard';
@@ -32,7 +32,7 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path: 'courses/:courseUrl',
+    path: 'equipos/:equipoUrl',
     component: CourseComponent
   },
   {

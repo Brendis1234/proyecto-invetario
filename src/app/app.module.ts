@@ -32,7 +32,7 @@ import {AboutComponent} from './about/about.component';
 import {LoginComponent} from './login/login.component';
 import {EquiposCardListComponent} from './equipos-card-list/equipos-card-list.component';
 import {AppRoutingModule} from './app-routing.module';
-import {CourseComponent} from './course/course.component';
+import {CourseComponent} from './equipo/equipo.component';
 import {CreateEquipoComponent} from './create-equipo/create-equipo.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {CreateUserComponent} from './create-user/create-user.component';

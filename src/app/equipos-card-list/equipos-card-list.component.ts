@@ -5,6 +5,7 @@ import {EditEquipoDialogComponent} from "../edit-equipo-dialog/edit-equipo-dialo
 import {catchError, tap} from 'rxjs/operators';
 import {throwError} from 'rxjs';
 import {Router} from '@angular/router';
+import { EquiposService } from '../services/service.equipo';
 
 @Component({
     selector: 'equipos-card-list',
@@ -24,14 +25,15 @@ export class EquiposCardListComponent implements OnInit {
 
     constructor(
       private dialog: MatDialog,
-      private router: Router) {
+      private router: Router,
+      private equiposService:EquiposService) {
     }
 
     ngOnInit() {
 
     }
 
-    editCourse(equipo:Equipo) {
+    editEquipo(equipo:Equipo) {
 
         const dialogConfig = new MatDialogConfig();
 
@@ -49,6 +51,21 @@ export class EquiposCardListComponent implements OnInit {
                 }
             });
 
+    }
+    onDeleteEquipo(equipo:Equipo){
+        this.equiposService.deleteCourseAndLessons(equipo.id)
+            .pipe(
+                tap(() => {
+                    console.log("deleted equipo", equipo);
+                    this.equipoDeleted.emit(equipo);
+                }),
+                catchError(err => {
+                    console.log(err);
+                    alert("no se pudo eliminar");
+                    return throwError(err);
+                })
+            )
+            .subscribe();
     }
 
 }

@@ -11,5 +11,7 @@ export interface Equipo {
     estado:string;
     iconUrl: string;
     categoria: string[];
+    serie:string;
+    sala:number;
 }
 
