@@ -18,15 +18,16 @@
   </mat-card-content>
   <mat-card-actions class="equipo-actions">
 
-    <button mat-button class="mat-raised-button mat-primary" [routerLink]="['/equipos', equipo.url]">
-      VIEW COURSE
+    <button mat-button class="mat-raised-button mat-primary" [routerLink]="['/equipos', equipo.codigo]">
+      Mantenimientos
     </button>
+
 
     <ng-container>
       <ng-container>
-        <button mat-button class="mat-raised-button mat-accent"
+        <button mat-mini-fab class="mat-raised-button mat-accent"
                 (click)="editEquipo(equipo)">
-          EDITAR
+          <mat-icon>edit</mat-icon>
         </button>
         <button mat-mini-fab color="warn" (click)="onDeleteEquipo(equipo)">
           <mat-icon>delete</mat-icon>

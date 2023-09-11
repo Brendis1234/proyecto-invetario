@@ -2,11 +2,13 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {AboutComponent} from './about/about.component';
-import {CourseComponent} from './equipo/equipo.component';
+import {EquipoComponent} from './equipo/equipo.component';
 import {LoginComponent} from './login/login.component';
 import {CreateEquipoComponent} from './create-equipo/create-equipo.component';
+import {CreateMantenimientoComponent} from './create-mantenimiento/create-mantenimiento.component';
 import {AngularFireAuthGuard, hasCustomClaim, redirectUnauthorizedTo} from '@angular/fire/auth-guard';
 import {CreateUserComponent} from './create-user/create-user.component';
+import { EquipoResolver } from './services/equipo.resolver';
 
 const routes: Routes = [
   {
@@ -16,6 +18,14 @@ const routes: Routes = [
   {
     path: 'create-equipo',
     component: CreateEquipoComponent
+
+  },
+  {
+    path: 'mantenimiento/:equipoUrl',
+    component: CreateMantenimientoComponent,
+    resolve:{
+      equipo:EquipoResolver
+    }
 
   },
   {
@@ -33,7 +43,10 @@ const routes: Routes = [
   },
   {
     path: 'equipos/:equipoUrl',
-    component: CourseComponent
+    component: EquipoComponent,
+    resolve:{
+      equipo:EquipoResolver
+    }
   },
   {
     path: '**',

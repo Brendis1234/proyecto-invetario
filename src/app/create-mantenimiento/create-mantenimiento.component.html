@@ -1,0 +1,42 @@
+<div class="create-mantenimiento">
+
+    <h3>Registrar Mantenimiento</h3>
+  
+    <form [formGroup]="form">
+  
+      <mat-form-field appearance="outline">
+  
+        <input placeholder="Nombre Responsable" matInput formControlName="nombre">
+  
+      </mat-form-field>
+      <mat-form-field appearance="outline">
+  
+        <input placeholder="No. Cedula" matInput formControlName="cedula" >
+  
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline">
+  
+        <input placeholder="No. Telefono" matInput formControlName="telefono">
+  
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline">
+  
+        <textarea matInput placeholder="Descripcion"
+                  formControlName="descripcion"></textarea>
+  
+      </mat-form-field>
+  
+      
+  
+      <button mat-raised-button color="warn" [disabled]="!form.valid"
+          (click)="onCreateMantenimiento()">
+        Crear mantenimiento
+      </button>
+  
+  
+  
+    </form>
+  
+  </div>

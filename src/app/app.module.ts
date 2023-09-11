@@ -32,24 +32,27 @@ import {AboutComponent} from './about/about.component';
 import {LoginComponent} from './login/login.component';
 import {EquiposCardListComponent} from './equipos-card-list/equipos-card-list.component';
 import {AppRoutingModule} from './app-routing.module';
-import {CourseComponent} from './equipo/equipo.component';
+import {EquipoComponent} from './equipo/equipo.component';
 import {CreateEquipoComponent} from './create-equipo/create-equipo.component';
+
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {CreateUserComponent} from './create-user/create-user.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {MatNativeDateModule} from '@angular/material/core';
-import { EditEquipoDialogComponent } from './edit-equipo-dialog/edit-equipo-dialog.component';
+import {EditEquipoDialogComponent} from './edit-equipo-dialog/edit-equipo-dialog.component';
+import { CreateMantenimientoComponent } from './create-mantenimiento/create-mantenimiento.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    CourseComponent,
+    EquipoComponent,
     EquiposCardListComponent,
     EditEquipoDialogComponent,
     LoginComponent,
     CreateEquipoComponent,
+    CreateMantenimientoComponent,
     CreateUserComponent
   ],
   imports: [

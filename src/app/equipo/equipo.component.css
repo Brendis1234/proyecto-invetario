@@ -1,31 +1,17 @@
 
-.course {
+.equipo {
     text-align: center;
-    max-width: 390px;
+    max-width: 1000px;
     margin: 20px auto 0 auto;
 }
 
-.course-thumbnail {
+.equipo-thumbnail {
     width: 200px;
     border-radius: 4px;
     margin: 20px auto;
     display: block;
 }
 
-.description-cell {
-    text-align: left;
-    margin: 10px auto;
-}
-
-.duration-cell {
-    text-align: center;
-}
-
-.duration-cell mat-icon {
-    display: inline-block;
-    vertical-align: middle;
-    font-size: 20px;
-}
 
 .spinner-container {
     height: 360px;
@@ -33,9 +19,19 @@
     position: fixed;
 }
 
-.lessons-table {
+.mant-table {
+    display: block;
+    width: 100%;
+    table-layout: fixed;
     min-height: 360px;
     margin-top: 10px;
+    text-align: center;
+}
+
+.mat-cell{
+    text-align: center;
+    padding: 10px; /* Espacio interno para el contenido */
+    box-sizing: border-box;
 }
 
 .spinner-container mat-spinner {
@@ -45,4 +41,19 @@
 .bottom-toolbar {
   margin: 30px 0;
   font-size: 18px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.title {
+    text-align: center;
+    margin-right: 15px;
+}
+.mat-header-cell {
+    text-align: center;
+    padding: 10px; /* Espacio interno para el contenido */
+    box-sizing: border-box; /* Incluye el espacio del borde en el ancho total */
 }

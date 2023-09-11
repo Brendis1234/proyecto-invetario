@@ -16,6 +16,33 @@ export class EquiposService{
     constructor(private db:AngularFirestore){
 
     }
+    findMantenimientos(equipoId:string, sortOrder: OrderByDirection = 'asc',
+                pageNumber = 0, pageSize = 3): Observable<Mantenimiento[]> {
+        return this.db.collection(`equipos/${equipoId}/mantenimientos`,
+            ref => ref.orderBy("codigo",sortOrder)
+                .limit(pageSize)
+                .startAfter(pageNumber * pageSize)
+        )
+        .get()
+        .pipe(
+            map(results => convertSnaps<Mantenimiento>(results))
+        )
+    }
+    findEquipoByUrl(equipoUrl: string): Observable<Equipo | null> {
+        let codigo = parseInt(equipoUrl);
+        return this.db.collection("equipos",
+            ref => ref.where("codigo", "==", codigo))
+            .get()
+            .pipe(
+              map(results => {
+
+                  const equipos = convertSnaps<Equipo>(results);
+
+                  return equipos.length == 1 ? equipos[0] : null;
+
+              })
+            );
+    }
     deleteCourseAndLessons(equipoId:string) {
         return this.db.collection(`equipos/${equipoId}/mantenimiento`)
             .get()
@@ -101,4 +128,40 @@ export class EquiposService{
                 map(result => convertSnaps<Equipo>(result))
             );
     }
+    
+    createMantenimiento(newMantenimiento: Partial<Mantenimiento>, mantenimientoId?: string, equipoId?: string): Observable<any> {
+        // Primero, obtenemos el último mantenimiento
+        return this.db.collection("equipos")
+          .doc(equipoId)
+          .collection("mantenimientos", ref => ref.orderBy("codigo", "desc").limit(1))
+          .get()
+          .pipe(
+            concatMap(result => {
+              const mantenimientos = convertSnaps<Mantenimiento>(result);
+              const lastMantenimiento = mantenimientos[0];
+              const lastMantenimientoCodigo = lastMantenimiento ? lastMantenimiento.codigo : 0;
+    
+              // Incrementamos el código en 1
+              const nuevoCodigo = lastMantenimientoCodigo + 1;
+    
+              // Agregamos el nuevo mantenimiento con el código actualizado
+              return from(
+                this.db.collection("equipos")
+                  .doc(equipoId)
+                  .collection("mantenimientos")
+                  .add({ ...newMantenimiento, codigo: nuevoCodigo })
+              ).pipe(
+                map(res => {
+                  return {
+                    id: mantenimientoId ?? res.id,
+                    codigo: nuevoCodigo, // Nuevo código asignado
+                    ...newMantenimiento
+                  };
+                })
+              );
+            })
+          );
+      }
+    
+    
 }

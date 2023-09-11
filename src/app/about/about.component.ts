@@ -23,7 +23,7 @@ export class AboutComponent {
         for (let equipo of Object.values(EQUIPOS)) {
             const newEquipo = this.removeId(equipo);
             const equipoRef = await equiposCollection.add(newEquipo);
-            const mant = await equipoRef.collection('mantenimiento');
+            const mant = await equipoRef.collection('mantenimientos');
             const equipoMantenimiento = findLessonsForCourse(equipo['id']);
             console.log(`Uploading equipo ${equipo['descripcion']}`);
             for (const mantenimientos of equipoMantenimiento) {
