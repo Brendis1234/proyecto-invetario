@@ -23,7 +23,7 @@
     display: block;
     width: 100%;
     table-layout: fixed;
-    min-height: 360px;
+    min-height: 200px;
     margin-top: 10px;
     text-align: center;
 }

@@ -17,10 +17,11 @@ export class HomeComponent implements OnInit {
 
     universidadEquiposS2$: Observable<Equipo[]>;
     universidadEquiposS1$: Observable<Equipo[]>;
-    colegioEquipos$: Observable<Equipo[]>;
+    colegioEquiposS1$: Observable<Equipo[]>;
+    colegioEquiposS2$: Observable<Equipo[]>;
     casaCEquipos$: Observable<Equipo[]>;
     mostrarAmbasSalas: boolean = true; // Mostrar ambas salas inicialmente
-
+    consulta: string = '';
     mostrarSala1: boolean = true;
     mostrarSala2: boolean = true;
 
@@ -50,8 +51,12 @@ export class HomeComponent implements OnInit {
     reloadEquipos(){
         this.universidadEquiposS1$ = this.equiposService.loadEquiposByCategory("Universidad",1);
         this.universidadEquiposS2$ = this.equiposService.loadEquiposByCategory("Universidad",2);
-        this.colegioEquipos$ = this.equiposService.loadEquiposByCategory("Colegio",2);
+        this.colegioEquiposS1$ = this.equiposService.loadEquiposByCategory("Colegio",1);
+        this.colegioEquiposS2$ = this.equiposService.loadEquiposByCategory("Colegio",2);
         this.casaCEquipos$ = this.equiposService.loadEquiposByCategory("CasaC",3);
+    }
+    buscarEquipo(){
+
     }
     
 }

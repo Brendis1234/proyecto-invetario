@@ -56,7 +56,7 @@ export class CreateEquipoComponent implements OnInit {
             .pipe(
                 tap(equipo => {
                     console.log("Registro exitoso: ", equipo);
-                    this.router.navigateByUrl("/eqiuipos");
+                    this.router.navigateByUrl("/equipos");
                 }),
                 catchError(err => {
                     console.log(err);

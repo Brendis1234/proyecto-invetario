@@ -40,7 +40,6 @@ export class EditEquipoDialogComponent {
         this.equiposService.updateEquipo(this.equipo.id,changes)
             .subscribe(()=> {
                 this.dialogRef.close(changes);
-
             });
     }
 }

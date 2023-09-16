@@ -13,5 +13,6 @@ export interface Equipo {
     categoria: string[];
     serie:string;
     sala:number;
+    
 }
 

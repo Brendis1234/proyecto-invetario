@@ -32,7 +32,7 @@ import {AboutComponent} from './about/about.component';
 import {LoginComponent} from './login/login.component';
 import {EquiposCardListComponent} from './equipos-card-list/equipos-card-list.component';
 import {AppRoutingModule} from './app-routing.module';
-import {EquipoComponent} from './equipo/equipo.component';
+import {MantenimientoComponent} from './mantenimiento/mantenimiento.component';
 import {CreateEquipoComponent} from './create-equipo/create-equipo.component';
 
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
@@ -40,20 +40,26 @@ import {CreateUserComponent} from './create-user/create-user.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {MatNativeDateModule} from '@angular/material/core';
 import {EditEquipoDialogComponent} from './edit-equipo-dialog/edit-equipo-dialog.component';
+
 import { CreateMantenimientoComponent } from './create-mantenimiento/create-mantenimiento.component';
+import { EditMantenimientoDialogComponent } from './edit-mantenimiento/edit-mantenimiento.component';
+import { FormsModule } from '@angular/forms';
+import { SearchEquipoComponet } from './search-equipo/search-equipo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    EquipoComponent,
+    MantenimientoComponent,
     EquiposCardListComponent,
     EditEquipoDialogComponent,
+    EditMantenimientoDialogComponent,
     LoginComponent,
     CreateEquipoComponent,
     CreateMantenimientoComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    SearchEquipoComponet
   ],
   imports: [
     BrowserModule,
@@ -84,7 +90,8 @@ import { CreateMantenimientoComponent } from './create-mantenimiento/create-mant
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireAuthModule,
-    AngularFireFunctionsModule
+    AngularFireFunctionsModule,
+    FormsModule
   ],
   providers: [
   // { provide: USE_AUTH_EMULATOR, useValue: environment.useEmulators ? ['localhost', 9099] : undefined },
