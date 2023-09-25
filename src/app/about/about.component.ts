@@ -4,7 +4,7 @@ import {Component, OnInit} from '@angular/core';
 import 'firebase/firestore';
 
 import {AngularFirestore} from '@angular/fire/firestore';
-import {EQUIPOS, findLessonsForCourse} from './db-data';
+import {EQUIPOS} from './db-data';
 
 
 @Component({
@@ -24,13 +24,8 @@ export class AboutComponent {
             const newEquipo = this.removeId(equipo);
             const equipoRef = await equiposCollection.add(newEquipo);
             const mant = await equipoRef.collection('mantenimientos');
-            const equipoMantenimiento = findLessonsForCourse(equipo['id']);
             console.log(`Uploading equipo ${equipo['descripcion']}`);
-            for (const mantenimientos of equipoMantenimiento) {
-                const newMantenimiento = this.removeId(mantenimientos);
-                delete newMantenimiento.courseId;
-                await mant.add(newMantenimiento);
-            }
+  
         }
     }
 

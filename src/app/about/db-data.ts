@@ -60,37 +60,7 @@ export const EQUIPOS: any = {
 
 };
 
-export const MANTENIMIENTOS = {
-  1: {
-    id: 1,
-    'descripcion': 'fallo en el monitor',
-    'nombre': 'Brenda Largo',
-    'cedula': '1000159817',
-    'telefono': '3142774962',
-    'codigo': 1,
-    equipoId: 1 
-  },
-  2: {
-    id: 2,
-    'descripcion': 'fallo en teclado',
-    'nombre': 'Brenda Largo',
-    'cedula': '1000159817',
-    'telefono': '3142774962',
-    'codigo': 2,
-    equipoId: 1 
-  },
-  3: {
-    id: 3,
-    'descripcion': 'fallo en el maus',
-    'nombre': 'Harol largo',
-    'cedula': '1000159817',
-    'telefono': '3142774962',
-    'codigo': 3,
-    equipoId: 3 
-  },
 
-
-};
 
 
 export const USERS = {
@@ -108,9 +78,6 @@ export function findCourseById(equipoId: number) {
   return EQUIPOS[equipoId];
 }
 
-export function findLessonsForCourse(equipoId: number) {
-  return Object.values(MANTENIMIENTOS).filter(mantenimiento => mantenimiento.equipoId == equipoId);
-}
 
 export function authenticate(email: string, password: string) {
 

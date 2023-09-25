@@ -23,12 +23,14 @@ export class MantenimientoComponent implements OnInit {
   consulta: string = '';
   equipo:Equipo;
   mantenimientos: Mantenimiento[];
- 
+  mostrarListarEquipos: boolean = false; // Inicializa la variable mostrarListarEquipos
+  mostrarVerMas: boolean = true; // Agrega esta variable y establece su valor inicial en true
+
 
   loading = false;
   lastPageLoaded = 0;
 
-  displayedColumns = ['nombre','cedula','telefono','descripcion','fechaInicio','fechaFinal','acciones'];
+  displayedColumns = ['nombre','cedula','telefono','tMantenimiento','descripcion','fechaInicio','fechaFinal','acciones'];
   
 
   constructor(private route: ActivatedRoute,
@@ -112,6 +114,9 @@ export class MantenimientoComponent implements OnInit {
         console.log('No se encontraron mantenimientos con ese nombre.');
       }
     });
+    this.consulta = '';
+    this.mostrarListarEquipos = true;
+    this.mostrarVerMas = false;
   }
   listarTodosEquipos() {
     this.loading = true;
@@ -131,6 +136,8 @@ export class MantenimientoComponent implements OnInit {
             );
         }
       );
+      this.mostrarListarEquipos = false;
+      this.mostrarVerMas = true;
   }
   
   volverPaginaAnterior() {

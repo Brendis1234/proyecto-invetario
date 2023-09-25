@@ -5,12 +5,12 @@ export interface Mantenimiento {
     id: string;
     descripcion: string;
     nombre: string;
-    cedula:string;
-    telefono:string;
+    cedula:number;
+    telefono:number;
     codigo: number;
-    equipoId: number;
     fechaInicio: Timestamp;
     fechaFinal: Timestamp;
     fin:boolean;
     eid:string;
+    tMantenimiento:string[];
 }

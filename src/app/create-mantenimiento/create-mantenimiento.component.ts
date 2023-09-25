@@ -26,7 +26,8 @@ export class CreateMantenimientoComponent implements OnInit {
     descripcion:['',Validators.required],
     fechaInicio:['',Validators.required],
     fin: [false],
-    fechaFinal: [null]
+    fechaFinal: [null],
+    tMantenimiento:['',Validators.required]
   });
   constructor(private fb:FormBuilder,
     private mantenimientosService:MantenimientosService,
@@ -52,9 +53,9 @@ onCreateMantenimiento(){
             descripcion:val.descripcion,
             fin:val.fin,
             fechaInicio: val.fechaInicio,
-            equipoId:this.equipo.codigo,
             fechaFinal:val.fechaFinal,
-            eid:this.equipo.id
+            eid:this.equipo.id,
+            tMantenimiento:[val.tMantenimiento]
         };
         
 

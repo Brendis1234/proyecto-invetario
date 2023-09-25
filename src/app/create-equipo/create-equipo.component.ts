@@ -7,6 +7,7 @@ import {from, Observable, throwError} from 'rxjs';
 import {Router} from '@angular/router';
 import {AngularFireStorage} from '@angular/fire/storage';
 import { EquiposService } from '../services/service.equipo';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'create-equipo',
@@ -30,7 +31,8 @@ export class CreateEquipoComponent implements OnInit {
     private equipoService:EquiposService,
     private afs: AngularFirestore,
     private router: Router,
-    private storage: AngularFireStorage) {
+    private storage: AngularFireStorage,
+    private location:Location) {
     
   }
 
@@ -66,6 +68,9 @@ export class CreateEquipoComponent implements OnInit {
             )
             .subscribe();
   }
+  volverPaginaAnterior() {
+    this.location.back(); // Navega hacia atrás en el historial del navegador
+}
     
 
 }

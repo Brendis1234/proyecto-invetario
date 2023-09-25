@@ -1,10 +1,11 @@
-<div>
+<mat-card class="equipo-card mat-elevation-z10">
+  <div>
     <h4>Buscar Equipo</h4>
     <input type="text" [(ngModel)]="consulta" placeholder="Ingrese serie">
-      <button (click)="buscarEquipo()">Buscar</button>
+    <button (click)="buscarEquipo()">Buscar</button>
   </div>
   <div>
-    <equipos-card-list >
-
-    </equipos-card-list>
-</div>
+    <equipos-card-list [equipos]="equiposList"></equipos-card-list>
+  </div>
+  <button mat-raised-button color="primary" (click)="volverPaginaAnterior()">Volver</button>
+</mat-card>
