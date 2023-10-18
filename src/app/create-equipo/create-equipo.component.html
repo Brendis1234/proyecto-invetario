@@ -5,34 +5,31 @@
   <form [formGroup]="form">
 
     <mat-form-field appearance="outline">
-
       <input placeholder="Tipo de Dispositivo" matInput formControlName="tipoDispositivo">
-
     </mat-form-field>
-    <mat-form-field appearance="outline">
 
+    <mat-form-field appearance="outline">
       <input placeholder="Modelo" matInput formControlName="modelo" >
-
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-
       <input placeholder="Sistema operativo" matInput formControlName="sO">
-
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-
       <input placeholder="Estado" matInput formControlName="estado">
-
     </mat-form-field>
 
     <mat-form-field appearance="outline">
-
       <input placeholder="Tipo conexión a red" matInput formControlName="tipoConRed">
-
     </mat-form-field>
 
+    <mat-form-field appearance="outline" >
+      <mat-select placeholder="Seleccione sala" formControlName="sala">
+        <mat-option [value]="1">sala 1</mat-option>
+        <mat-option [value]="2">sala 2</mat-option>
+      </mat-select>
+    </mat-form-field>
 
     <mat-form-field appearance="outline">
 
@@ -60,9 +57,10 @@
     (click)="onCreateEquipo()">
       Registrar Equipo
     </button>
-    <button mat-raised-button color="primary" (click)="volverPaginaAnterior()">Volver</button>
-
   </form>
+  <div>
+    <button mat-raised-button color="primary" class="volver" (click)="volverPaginaAnterior()">Volver</button>
+  </div>
 
 </div>
 

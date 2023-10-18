@@ -47,4 +47,9 @@
 .uploaded-image {
   max-width: 250px;
 }
-
+.volver{
+  margin-top: 10px;
+  min-width: 0;
+  width: auto;
+  float: right;
+}

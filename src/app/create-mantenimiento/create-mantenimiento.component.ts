@@ -10,7 +10,8 @@ import { Equipo } from '../model/equipo';
 import firebase from 'firebase/app';
 import Timestamp = firebase.firestore.Timestamp;
 import { MantenimientosService } from '../services/service.mantenimiento';
-
+import { Location } from '@angular/common';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'create-mantenimiento',
   templateUrl: 'create-mantenimiento.component.html',
@@ -34,7 +35,8 @@ export class CreateMantenimientoComponent implements OnInit {
     private afs: AngularFirestore,
     private router: Router,
     private route: ActivatedRoute,
-    private storage: AngularFireStorage) {
+    private storage: AngularFireStorage,
+    private location: Location) {
     
   }
 
@@ -65,6 +67,7 @@ onCreateMantenimiento(){
                     const numero = this.equipo.codigo;
                     console.log("Registro exitoso: ", mantenimiento);
                     this.router.navigateByUrl(`/equipos/${numero}`);
+                    Swal.fire('Mantenimiento Registrado correctamente', `Codigo: ${mantenimiento.codigo}`, 'success');
                 }),
                 catchError(err => {
                     console.log(err);
@@ -74,6 +77,14 @@ onCreateMantenimiento(){
             )
             .subscribe();
   }
-    
-
+  volverPaginaAnterior() {
+    this.location.back(); // Navega hacia atrás en el historial del navegador
+  }
+  fechaActual() {
+    const today = new Date();
+    const dd = String(today.getDate()).padStart(2, '0');
+    const mm = String(today.getMonth() + 1).padStart(2, '0');
+    const yyyy = today.getFullYear();
+    return `${yyyy}-${mm}-${dd}`;
+  }
 }

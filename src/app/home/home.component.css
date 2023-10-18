@@ -2,7 +2,7 @@
 
 .equipo-panel {
     max-width: 400px;
-    margin: 20px auto 0 auto;
+    margin: 10px auto 0 auto;
 }
 
 
@@ -15,4 +15,11 @@
 .title {
     text-align: center;
     margin-right: 15px;
+}
+.button {
+    font-size: 17px;         /* Tamaño de fuente más grande */
+    border: 1px solid grey;           
+    border-radius: 10px;     /* Bordes redondeados */
+    margin-left: 20px;
+    margin-top: 10px;
 }

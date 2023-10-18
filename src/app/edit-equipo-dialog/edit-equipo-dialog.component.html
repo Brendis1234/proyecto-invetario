@@ -2,44 +2,42 @@
 <h2 mat-dialog-title>Editar equipo</h2>
 
 <mat-dialog-content [formGroup]="form">
-
     <mat-form-field>
 
         <input matInput
                 placeholder="SERIE" formControlName="serie">
-
     </mat-form-field>
-    <mat-form-field>
 
+    <mat-form-field>
         <input matInput
                 placeholder="Modelo" formControlName="modelo">
-
     </mat-form-field>
-    <mat-form-field>
 
+    <mat-form-field>
         <input matInput
                 placeholder="Tipo de Dispositivo" formControlName="tipoDispositivo">
-
     </mat-form-field>
-    <mat-form-field>
 
+    <mat-form-field>
         <input matInput
                 placeholder="Tipo de conexión a red" formControlName="tipoConRed">
-
     </mat-form-field>
-    <mat-form-field>
 
+    <mat-form-field>
         <input matInput
                 placeholder="Estado" formControlName="estado">
-
     </mat-form-field>
+
     <mat-form-field>
-
         <textarea matInput placeholder="Descripcion" formControlName="descripcion">
-
         </textarea>
-
     </mat-form-field>
+    <mat-form-field appearance="outline" >
+        <mat-select placeholder="Seleccione sala" formControlName="sala">
+          <mat-option [value]="1">sala 1</mat-option>
+          <mat-option [value]="2">sala 2</mat-option>
+        </mat-select>
+      </mat-form-field>
 
 </mat-dialog-content>
 
@@ -49,9 +47,9 @@
         Cerrar
     </button>
 
-    <button mat-raised-button color="primary" (click)="save()">
+    <button mat-raised-button color="primary" (click)="confirmSave()">
         Guardar
-    </button>
+      </button>
 
 </mat-dialog-actions>
 

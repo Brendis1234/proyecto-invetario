@@ -16,8 +16,8 @@
     <mat-tab-group>
         <mat-tab label="Universidad">
             
-            <button (click)="toggleSala(1)">Sala 1</button>
-            <button (click)="toggleSala(2)">Sala 2</button>
+            <button (click)="toggleSala(1)" class="button">Sala 1</button>
+            <button (click)="toggleSala(2)"class="button right-button">Sala 2</button>
             <div>
                 <equipos-card-list *ngIf="mostrarSala1" [equipos]="universidadEquiposS1$ | async" 
                     (equipoEdited)="reloadEquipos()"
@@ -35,8 +35,8 @@
           
 
         <mat-tab label="Colegio">
-            <button (click)="toggleSala(1)">Sala 1</button>
-            <button (click)="toggleSala(2)">Sala 2</button>
+            <button (click)="toggleSala(1)" class="button">Sala 1</button>
+            <button (click)="toggleSala(2)"class="button right-button">Sala 2</button>
             <equipos-card-list *ngIf="mostrarSala1" [equipos]="colegioEquiposS1$ | async"
                 (equipoEdited)="reloadEquipos()"
                 (equipoDeleted)="reloadEquipos()">

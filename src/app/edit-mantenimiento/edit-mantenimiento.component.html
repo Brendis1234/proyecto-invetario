@@ -32,11 +32,18 @@
     </mat-form-field>
     <mat-form-field>
 
-        <textarea matInput placeholder="Descripcion" formControlName="descripcion">
-
-        </textarea>
+        <textarea matInput placeholder="Descripcion" formControlName="descripcion"></textarea>
 
     </mat-form-field>
+    <mat-form-field appearance="outline" >
+
+        <mat-select matInput placeholder="Tipo de mantenimiento" formControlName="tMantenimiento">
+          <mat-option value="Preventivo">Preventivo</mat-option>
+          <mat-option value="Correctivo">Correctivo</mat-option>
+        </mat-select>
+  
+      </mat-form-field>
+
 
 </mat-dialog-content>
 
@@ -46,7 +53,7 @@
         Cerrar
     </button>
 
-    <button mat-raised-button color="primary" (click)="save()">
+    <button mat-raised-button color="primary" (click)="confirmSave()">
         Guardar
     </button>
 

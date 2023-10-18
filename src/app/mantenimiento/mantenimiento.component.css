@@ -57,3 +57,73 @@
     padding: 10px; /* Espacio interno para el contenido */
     box-sizing: border-box; /* Incluye el espacio del borde en el ancho total */
 }
+.title-2 {
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0;
+    
+  }
+  
+  input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+    flex: 1; /* El cuadro de texto se expandirá para ocupar el espacio restante */
+  }
+  
+  button.search-button, button.list-button, button.back-button, button.centered-button {
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .search-button{
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  .search-button:hover {
+    background-color: #0056b3; /* Nuevo color azul al pasar el cursor */
+    color: #fff; /* Texto en blanco */
+  }
+ 
+ 
+  
+  .bottom-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  
+  
+  /* Estilos para dispositivos móviles */
+  @media (max-width: 768px) {
+    .container {
+      padding: 10px;
+    }
+  
+    input {
+      width: 100%;
+    }
+  }
+  
+  

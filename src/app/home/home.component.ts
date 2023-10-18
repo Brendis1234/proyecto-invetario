@@ -53,7 +53,7 @@ export class HomeComponent implements OnInit {
         this.universidadEquiposS2$ = this.equiposService.loadEquiposByCategory("Universidad",2);
         this.colegioEquiposS1$ = this.equiposService.loadEquiposByCategory("Colegio",1);
         this.colegioEquiposS2$ = this.equiposService.loadEquiposByCategory("Colegio",2);
-        this.casaCEquipos$ = this.equiposService.loadEquiposByCategory("CasaC",3);
+        this.casaCEquipos$ = this.equiposService.loadEquiposByCategory("CasaC",1);
     }
     buscarEquipo(){
 

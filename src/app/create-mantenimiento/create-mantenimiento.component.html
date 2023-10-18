@@ -36,8 +36,9 @@
       </mat-form-field>
       <mat-form-field appearance="outline">
         <mat-label>Fecha Inicio:</mat-label>
-        <input matInput type="date" formControlName="fechaInicio">
+        <input matInput type="date" formControlName="fechaInicio" [max]="fechaActual()">
       </mat-form-field>
+      
       <mat-slide-toggle class="fin" color="primary" formControlName="fin">
         ¿Finalizó el mantenimiento?
       </mat-slide-toggle>
@@ -46,16 +47,13 @@
         <mat-label>Fecha final</mat-label>
         <input matInput type="date" formControlName="fechaFinal">
       </mat-form-field>
-  
-      
-  
       <button mat-raised-button color="warn" [disabled]="!form.valid"
           (click)="onCreateMantenimiento()">
         Crear mantenimiento
-      </button>
-  
-  
-  
+    </button>
     </form>
-  
+    <div>
+      <button class="back-button" mat-raised-button color="primary" (click)="volverPaginaAnterior()">Volver</button>
+    </div>
   </div>
+  

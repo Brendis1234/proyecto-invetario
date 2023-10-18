@@ -1,20 +1,20 @@
 <mat-card *ngFor="let equipo of equipos" class="equipo-card mat-elevation-z10">
 
-  <mat-card-header>
-
-    <mat-card-title>Serie: {{equipo.serie}}</mat-card-title>
-
+  <mat-card-header class="info-row">
+    <mat-card-title >
+      <span>Código: {{equipo.codigo}} -- </span>
+      <span>Serie: {{equipo.serie}} -- </span>
+      <span>Sala: {{equipo.sala}}</span>
+    </mat-card-title>
   </mat-card-header>
-
   <img mat-card-image [src]="equipo.iconUrl">
-
   <mat-card-content>
     <p>Modelo: {{equipo.modelo}}</p>
     <p>Tipo de dispositivo: {{equipo.tipoDispositivo}}</p>
     <p>Sistema operativo: {{equipo.sO}}</p>
     <p>Tipo conexión a red: {{equipo.tipoConRed}}</p>
     <p>Estado: {{equipo.estado}}</p>
-    <p>descripcion: {{equipo.descripcion}}</p>
+    <p>Descripcion: {{equipo.descripcion}}</p>
   </mat-card-content>
   <mat-card-actions class="equipo-actions">
 
@@ -29,7 +29,7 @@
                 (click)="editEquipo(equipo)">
           <mat-icon>edit</mat-icon>
         </button>
-        <button mat-mini-fab color="warn" (click)="onDeleteEquipo(equipo)">
+        <button mat-mini-fab color="warn" (click)="confirmDelete(equipo)">
           <mat-icon>delete</mat-icon>
         </button>
       </ng-container>

@@ -8,7 +8,7 @@ import {Router} from '@angular/router';
 import {AngularFireStorage} from '@angular/fire/storage';
 import { EquiposService } from '../services/service.equipo';
 import { Location } from '@angular/common';
-
+import Swal from 'sweetalert2';
 @Component({
   selector: 'create-equipo',
   templateUrl: 'create-equipo.component.html',
@@ -25,7 +25,8 @@ export class CreateEquipoComponent implements OnInit {
     tipoConRed:['',Validators.required],
     modelo:['',Validators.required],
     categoria:['',Validators.required],
-    serie:['',Validators.required]
+    serie:['',Validators.required],
+    sala:['',Validators.required]
   });
   constructor(private fb:FormBuilder,
     private equipoService:EquiposService,
@@ -33,7 +34,6 @@ export class CreateEquipoComponent implements OnInit {
     private router: Router,
     private storage: AngularFireStorage,
     private location:Location) {
-    
   }
 
   ngOnInit() {
@@ -42,7 +42,6 @@ export class CreateEquipoComponent implements OnInit {
 
   onCreateEquipo(){
     const val = this.form.value;
-
         const newEquipo: Partial<Equipo> = {
             descripcion: val.descripcion,
             estado: val.estado,
@@ -51,7 +50,8 @@ export class CreateEquipoComponent implements OnInit {
             tipoDispositivo: val.tipoDispositivo,
             tipoConRed: val.tipoConRed,
             categoria: [val.categoria],
-            serie:val.serie
+            serie:val.serie,
+            sala:val.sala
         };
 
         this.equipoService.createEquipo(newEquipo, this.equipoId)
@@ -59,6 +59,7 @@ export class CreateEquipoComponent implements OnInit {
                 tap(equipo => {
                     console.log("Registro exitoso: ", equipo);
                     this.router.navigateByUrl("/equipos");
+                    Swal.fire('Equipo Registrado correctamente', `Serie: ${equipo.serie}`, 'success');
                 }),
                 catchError(err => {
                     console.log(err);

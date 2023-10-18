@@ -50,7 +50,7 @@
               (click)="editMantenimineto(mantenimiento)">
                 <mat-icon >edit</mat-icon>
               </button>
-              <button mat-mini-fab color="warn" (click)="onDeleteMantenimiento(equipo,mantenimiento)">
+              <button mat-mini-fab color="warn" (click)="confirmDelete(equipo,mantenimiento)">
                 <mat-icon>delete</mat-icon>
               </button>
             </mat-cell>
@@ -58,20 +58,23 @@
         <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
         <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
       </mat-table>
-      <div>
-        <h4>Buscar mantenimientos</h4>
-        <input type="text" [(ngModel)]="consulta" placeholder="Ingrese nombre">
-          <button (click)="buscarMantenimiento(equipo)">Buscar</button>
+      <div class="container">
+        <button class="centered-button" mat-raised-button color="primary" *ngIf="mostrarVerMas" (click)="loadMore()">
+          Ver más
+        </button>
+        <h3 class="title-2">Buscar mantenimientos</h3>
+        <div class="search-bar">
+          <input type="text" [(ngModel)]="consulta" placeholder="Ingrese nombre">
+          <button class="search-button" (click)="buscarMantenimiento(equipo)">Buscar</button>
+        </div>
       </div>
-      <button *ngIf="mostrarListarEquipos" (click)="listarTodosEquipos()">Listar Todos los Equipos</button>
-
-      <button mat-button class="mat-raised-button mat-primary" routerLink="'/equipos'">
-        Volver
-      </button>
-    <button class="bottom-toolbar" mat-raised-button color="primary"
-    *ngIf="mostrarVerMas" (click)="loadMore()">
-      Ver mas
-    </button>
+      
+      <div class="bottom-toolbar">
+        <button *ngIf="mostrarListarEquipos" (click)="listarTodosEquipos()"class="list-button" mat-raised-button color="primary">Listar Todos los Equipos</button>
+        <button class="back-button" mat-raised-button color="primary" mat-button routerLink="'/equipos'">Volver</button>
+      </div>
+      
+      
 
 </div>
 

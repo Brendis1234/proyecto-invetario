@@ -1,7 +1,7 @@
 
 
 .equipo-card {
-    margin: 20px 10px;
+    margin: 20px 5px;
 }
 
 .equipo-actions {
@@ -10,3 +10,15 @@
 .equipo-title{
     text-align: center;
 }
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%; /* Opcional: asegura que ocupa todo el espacio disponible */
+    border-bottom: 1px solid #ccc; /* Línea de borde inferior */
+    padding-bottom: 10px; /* Espacio entre la información y la línea */
+    margin-bottom: 10px; /* Espacio entre la línea y el contenido siguiente */
+    width: 100%; 
+}
+  .info-row span:not(:last-child)::after {
+    content: "\00a0"; 
+  }
